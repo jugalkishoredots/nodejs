@@ -1,7 +1,7 @@
 module.exports = {
     index: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
-       res.render("web/index", {data: "Dynamic Data",  layout: './layouts/sidebar'});
+       res.render("web/index", {data: "Dynamic Data"});
     },
     login: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});

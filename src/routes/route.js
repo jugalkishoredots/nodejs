@@ -9,6 +9,12 @@ const apiRouter = express.Router();
 
 const router = (app) => {
   app.use("/", webRouter);
+  webRouter.all("*", (req, res, next) => {
+    res.locals.layout = "./layouts/web/web_layout";
+   // res.locals.layout = 'frontend/layouts/admin_layout';
+    next();
+    //console.log(req.session.admin);
+  });
   webRouter.get("/", UserController.index);
   webRouter.get("/register", UserController.register);
   webRouter.post("/register-post", UserController.registerPost);
@@ -25,7 +31,7 @@ const router = (app) => {
     //console.log(req.session.admin);
   });
   adminRouter.get("/", (req, res) => {
-    res.render("admin/login/login", { layout: "specific-layout" });
+    res.render("admin/login/login", { layout: "./layouts/admin/login_layout" });
   });
   adminRouter.post("/loginPost", AdminUserController.loginPost);
   //adminRouter.get("/dashboard",AdminUserController.dashboard);

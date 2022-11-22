@@ -6,6 +6,7 @@ const path = require("path");
 
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
+// app.set('layout', './layouts/web/web_layout');
 
 
 // Set Templating Engine
