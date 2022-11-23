@@ -44,6 +44,7 @@ const router = (app) => {
   adminRouter.post("/faq-manager/:id/edit", auth.adminAuth, FaqController.update);
   adminRouter.post("/faq-manager/:id/delete", auth.adminAuth, FaqController.delete);
   adminRouter.get("/my-profile", auth.adminAuth, AdminUserController.myProfile);
+  adminRouter.post("/my-profile", auth.adminAuth, AdminUserController.saveProfile);
   adminRouter.get("/settings", auth.adminAuth, AdminUserController.settings);
   adminRouter.get("/logout", auth.adminAuth, AdminUserController.logout);
 

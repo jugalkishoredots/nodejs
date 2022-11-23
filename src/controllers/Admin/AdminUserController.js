@@ -76,20 +76,17 @@ module.exports = {
     res.render("web/register", { data: "Dynamic Data" });
   },
   registerPost: (req, res) => {
-    // res.render("users/index", {data: "Dynamic Data"});
     res.render("web/index", { data: "Dynamic Data" });
   },
   dashboard: (req, res) => {
-    // res.render("users/index", {data: "Dynamic Data"});
     res.render("admin/dashboard/AdminDashboard", {
       layout: "./layouts/admin/admin_layout",
       data: "Dynamic Data",
-      message: req.flash("message"),
+      message: req.flash("error"),
       success: req.flash("success"),
     });
   },
   myProfile: async(req, res) => {
-    // res.render("users/index", {data: "Dynamic Data"});
     await db.Admin.findOne({
       where: {
         id: req.session.admin.id,
@@ -97,7 +94,7 @@ module.exports = {
     }).then((adminDetail) => {
       if (adminDetail != null) {
         res.render("admin/admin/edit_profile", {
-          message: req.flash("message"),
+          message: req.flash("error"),
           success: req.flash("success"),
           layout: "./layouts/admin/admin_layout",
           data: adminDetail,
@@ -107,25 +104,46 @@ module.exports = {
         res.redirect("/admin");
       }
     });
-    // console.log("dsasdsds",req.session.admin.id);
-    // res.render("admin/admin/edit_profile", {
-    //   message: req.flash("message"),
-    //   success: req.flash("success"),
-    //   layout: "./layouts/admin/admin_layout",
-    //   data: "Dynamic Data",
-    // });
   },
-  saveProfile: (req, res) => {
-    // res.render("users/index", {data: "Dynamic Data"});
-    res.render("admin/admin/edit_profile", {
-      message: req.flash("message"),
-      success: req.flash("success"),
-      layout: "./layouts/admin/admin_layout",
-      data: "Dynamic Data",
-    });
+  saveProfile: async(req, res) => {
+    await db.Admin.findOne({
+      where: {
+        id: req.session.admin.id,
+        email: req.session.admin.email,
+      },
+    })
+      .then((adminDetail) => {
+        if (adminDetail != null) {
+          bcrypt.compare(
+            req.body.password,
+            adminDetail.password,
+            function (err, response) {
+              if (response == true) {
+                // console.log('jjjj',adminDetail);
+                adminDetail.update({ firstName: req.body.firstName, lastName: req.body.lastName }, {
+                  where: {
+                    id: req.session.admin.id,
+                    email: req.session.admin.email,
+                  }
+                })
+                req.flash("success", "User successfully updated.");
+                res.redirect("/admin/my-profile");
+              } else {
+                req.flash("error", "Wrong Password.");
+                res.redirect("/admin/my-profile");
+              }
+            }
+          );
+        } else {
+          req.flash("error", "Invalid Email Id !!!");
+          res.redirect("/admin");
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to retrieve admin detail : ", error);
+      });    
   },
   settings: (req, res) => {
-    // res.render("users/index", {data: "Dynamic Data"});
     res.render("admin/admin/setting", {
       message: req.flash("message"),
       success: req.flash("success"),

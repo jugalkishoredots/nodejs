@@ -4,60 +4,75 @@
             <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Edit Profile</h3>
-
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="inputName">First Name</label>
-                                <input type="text" id="inputName" name="firstName" class="form-control" value="<%= data.firstName %>" >
+                <form action="" method="post">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputName">First Name</label>
+                                    <input type="text" id="inputName" name="firstName" class="form-control"
+                                        value="<%= data.firstName %>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputName">Last Name</label>
+                                    <input type="text" id="inputName" name="lastName" class="form-control"
+                                        value="<%= data.lastName %>" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="inputName">Last Name</label>
-                                <input type="text" id="inputName" name="lastName" class="form-control" value="<%= data.lastName %>" >
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="inputName">Email</label>
+                                    <input type="text" id="inputName" name="email" class="form-control"
+                                        value="<%= data.email %>" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="inputName">Current Password</label>
+                                    <input type="password" id="inputName" name="password" class="form-control" value=""
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputName">Password</label>
+                                    <input type="password" id="inputName" name="new_password" class="form-control"
+                                        value="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputName">Confirm Password</label>
+                                    <input type="password" id="inputName" name="confirm_password" class="form-control"
+                                        value="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="inputName">Email</label>
-                                <input type="text" id="inputName" name="email" class="form-control" value="<%= data.email %>" readonly >
-                            </div>
-                        </div>                        
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-secondary">Cancel</a>
+                        <input type="submit" value="Save Changes" class="btn btn-success">
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="inputName">Password</label>
-                                <input type="password" id="inputName" name="password" class="form-control" value="" >
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="inputName">Confirm Password</label>
-                                <input type="password" id="inputName" name="confirm_password" class="form-control" value="" >
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <a href="#" class="btn btn-secondary">Cancel</a>
-                    <input type="submit" value="Save Changes" class="btn btn-success">
-                </div>
+                </form>
             </div>
             <!-- /.card -->
         </div>
 
     </div>
-    
+
 </div>
