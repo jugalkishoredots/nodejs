@@ -39,6 +39,7 @@ const router = (app) => {
   adminRouter.get("/dashboard", auth.adminAuth, AdminUserController.dashboard);
   adminRouter.get("/faq-manager", auth.adminAuth, FaqController.index);
   adminRouter.get("/my-profile", auth.adminAuth, AdminUserController.myProfile);
+  adminRouter.get("/settings", auth.adminAuth, AdminUserController.settings);
   adminRouter.get("/logout", auth.adminAuth, AdminUserController.logout);
 
   //Start API Routes 

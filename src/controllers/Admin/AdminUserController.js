@@ -28,7 +28,11 @@ module.exports = {
     },
     myProfile: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
-       res.render("admin/dashboard/AdminDashboard", { layout: './layouts/admin/admin_layout', data: "Dynamic Data"});
+       res.render("admin/admin/edit_profile", { layout: './layouts/admin/admin_layout', data: "Dynamic Data"});
+    },
+    settings: (req, res) => {
+       // res.render("users/index", {data: "Dynamic Data"});
+       res.render("admin/admin/setting", { layout: './layouts/admin/admin_layout', data: "Dynamic Data"});
     },
     logout: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
