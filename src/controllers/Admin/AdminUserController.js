@@ -5,7 +5,8 @@ module.exports = {
     },
     login: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
-       res.render("web/login", {data: "Dynamic Data"});
+      //  res.render("web/login", {data: "Dynamic Data"});
+       res.render("admin/admin/login", { layout: "./layouts/admin/login_layout" });
     },
     loginPost: (req, res) => {
       console.log(req.body)
@@ -22,6 +23,10 @@ module.exports = {
        res.render("web/index", {data: "Dynamic Data"});
     },
     dashboard: (req, res) => {
+       // res.render("users/index", {data: "Dynamic Data"});
+       res.render("admin/dashboard/AdminDashboard", { layout: './layouts/admin/admin_layout', data: "Dynamic Data"});
+    },
+    myProfile: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
        res.render("admin/dashboard/AdminDashboard", { layout: './layouts/admin/admin_layout', data: "Dynamic Data"});
     },

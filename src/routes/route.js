@@ -33,13 +33,12 @@ const router = (app) => {
     next();
     //console.log(req.session.admin);
   });
-  adminRouter.get("/", (req, res) => {
-    res.render("admin/login/login", { layout: "./layouts/admin/login_layout" });
-  });
+ 
+  adminRouter.get("/", auth.adminAuth, AdminUserController.login);
   adminRouter.post("/loginPost", AdminUserController.loginPost);
-  //adminRouter.get("/dashboard",AdminUserController.dashboard);
   adminRouter.get("/dashboard", auth.adminAuth, AdminUserController.dashboard);
   adminRouter.get("/faq-manager", auth.adminAuth, FaqController.index);
+  adminRouter.get("/my-profile", auth.adminAuth, AdminUserController.myProfile);
   adminRouter.get("/logout", auth.adminAuth, AdminUserController.logout);
 
   //Start API Routes 

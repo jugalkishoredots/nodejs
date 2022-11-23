@@ -32,3 +32,14 @@
 <!-- <script src="/public/backend/dist/js/demo.js"></script> -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/public/backend/dist/js/pages/dashboard.js"></script>
+<script>
+  (function($) {
+    $(document).ready(function() {
+       // get current URL path and assign 'active' class
+       var pathname = window.location.pathname;
+       console.log(pathname);
+      // $('.nav.nav-pills > li > a[href="'+pathname+'"]').parent().addClass('active');
+       $('.nav.nav-pills > li > a[href="'+pathname+'"]').addClass('active');
+   });
+ })(jQuery);
+</script>
