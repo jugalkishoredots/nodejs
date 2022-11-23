@@ -29,10 +29,9 @@ Open [http://localhost:3000](http://localhost:3000) and take a look around.
 ## Steps for Database (recommended)
 ```
 Step 1: open http://localhost/phpmyadmin/
-```
+
 Step 2: Login to localhost phpmyadmin 
-```
+
 Step 3: Create a new database name 'nodejs'
-```
+
 inport in to the sql file name "nodejs.sql"
-```
