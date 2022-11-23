@@ -34,7 +34,7 @@ const router = (app) => {
     //console.log(req.session.admin);
   });
  
-  adminRouter.get("/", auth.adminAuth, AdminUserController.login);
+  adminRouter.get("/", auth.ifAdminLoggedin,AdminUserController.login);
   adminRouter.post("/loginPost", AdminUserController.loginPost);
   adminRouter.get("/dashboard", auth.adminAuth, AdminUserController.dashboard);
   adminRouter.get("/faq-manager", auth.adminAuth, FaqController.index);

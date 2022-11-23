@@ -11,57 +11,32 @@
               <thead>
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
+                  <th>Question</th>
+                  <th>Answer</th>
+                  <th style="width: 500px;">Created Date</th>
+                  <th style="width: 40px">Status</th>
+                  <th style="width: 150px">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-danger">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar bg-warning" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-warning">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar bg-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-primary">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar bg-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-success">90%</span></td>
-                </tr>
+                <% data.forEach(function(faq,i){  %>
+                  <tr>
+                    <th scope="row"><%= i+1 %></th>
+                    <td><%= faq.question %> </td>
+                    <td><%= faq.answer %> </td>
+                    <td><%= faq.createdAt %> </td>
+                    <td><%= faq.status %> </td>                    
+                    <td>
+                      <a class="btn bg-gradient-primary btn-sm">Edit</a>
+                      <a class="btn bg-gradient-danger btn-sm">Delete</a>
+                    </td>                    
+                  </tr>
+                <%  }) %>                
               </tbody>
             </table>
           </div>
           <!-- /.card-body -->
-          <div class="card-footer clearfix">
+          <!-- <div class="card-footer clearfix">
             <ul class="pagination pagination-sm m-0 float-right">
               <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
               <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -69,7 +44,7 @@
               <li class="page-item"><a class="page-link" href="#">3</a></li>
               <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
             </ul>
-          </div>
+          </div> -->
         </div>
         <!-- /.card -->
         
