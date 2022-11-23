@@ -13,7 +13,14 @@ module.exports = {
     },
     register: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
-       res.render("web/register", {data: "Dynamic Data"});
+       res.render("web/register", {
+         title: ":: Login ::",
+         data: [],
+         message: req.flash("error"),
+         success: req.flash("success"),
+         layout: "./layouts/web/web_layout",
+       });
+      //  res.render("web/register", {data: "Dynamic Data"});
     },
     registerPost: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
