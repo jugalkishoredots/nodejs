@@ -30,7 +30,7 @@ Open [http://localhost:3000/admin](http://localhost:3000/admin) for admin panel.
 
 Use this details: 
 
-Email : jugal.kishore@dotsquares.com
+Email : admin@example.com
 Password : Dots@123
 
 
