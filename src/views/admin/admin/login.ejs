@@ -1,7 +1,5 @@
 <form action="/admin/loginPost" method="post">
-  <% if (message.length > 0) { %>
-    <div class="alert alert-danger"><%= message %></div>
-    <% } %>
+    <%- include('../elements/flash_message'); %>
   <div class="input-group mb-3">
     <input type="email" class="form-control" placeholder="Email" name="email">
     <div class="input-group-append">

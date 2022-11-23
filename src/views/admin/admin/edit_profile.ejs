@@ -12,32 +12,42 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="form-group">
-                        <label for="inputName">Project Name</label>
-                        <input type="text" id="inputName" class="form-control" value="AdminLTE">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputName">First Name</label>
+                                <input type="text" id="inputName" name="firstName" class="form-control" value="<%= data.firstName %>" >
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputName">Last Name</label>
+                                <input type="text" id="inputName" name="lastName" class="form-control" value="<%= data.lastName %>" >
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputDescription">Project Description</label>
-                        <textarea id="inputDescription" class="form-control"
-                            rows="4">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</textarea>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="inputName">Email</label>
+                                <input type="text" id="inputName" name="email" class="form-control" value="<%= data.email %>" readonly >
+                            </div>
+                        </div>                        
                     </div>
-                    <div class="form-group">
-                        <label for="inputStatus">Status</label>
-                        <select id="inputStatus" class="form-control custom-select">
-                            <option disabled>Select one</option>
-                            <option>On Hold</option>
-                            <option>Canceled</option>
-                            <option selected>Success</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputClientCompany">Client Company</label>
-                        <input type="text" id="inputClientCompany" class="form-control" value="Deveint Inc">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputProjectLeader">Project Leader</label>
-                        <input type="text" id="inputProjectLeader" class="form-control" value="Tony Chicken">
-                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputName">Password</label>
+                                <input type="password" id="inputName" name="password" class="form-control" value="" >
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputName">Confirm Password</label>
+                                <input type="password" id="inputName" name="confirm_password" class="form-control" value="" >
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

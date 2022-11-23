@@ -5,7 +5,8 @@ module.exports = {
       .then((faq_list) => {
         res.render("admin/faq/index", {
           title: ":: View FAQs List ::",
-          message: req.flash("success"),
+          message: req.flash("message"),
+          success: req.flash("success"),
           layout: "./layouts/admin/admin_layout",
           data: faq_list,
         });
@@ -17,7 +18,8 @@ module.exports = {
   add: (req, res) => {
     res.render("admin/faq/create", {
       title: ":: Create FAQs ::",
-      message: req.flash("success"),
+      message: req.flash("message"),
+      success: req.flash("success"),
       layout: "./layouts/admin/admin_layout",
     });
   },
@@ -44,7 +46,8 @@ module.exports = {
       .then((faq_data) => {
         res.render("admin/faq/edit", {
           title: ":: View FAQs ::",
-          message: req.flash("success"),
+          message: req.flash("message"),
+          success: req.flash("success"),
           layout: "./layouts/admin/admin_layout",
           data: faq_data,
         });
