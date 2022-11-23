@@ -1,5 +1,5 @@
 const express = require("express");
-const UserController = require("../controllers/userController");
+const UserController = require("../controllers/Web/UserController");
 const AdminUserController = require("../controllers/Admin/AdminUserController");
 const FaqController = require("../controllers/Admin/FaqController");
 const auth = require("../middlewares/authentication");
@@ -17,9 +17,9 @@ const router = (app) => {
   });
   webRouter.get("/", UserController.index);
   webRouter.get("/register", UserController.register);
-  webRouter.post("/register-post", UserController.registerPost);
+  webRouter.post("/register", UserController.registerPost);
   webRouter.get("/login", UserController.login);
-  webRouter.post("/login-post", UserController.loginPost);
+  webRouter.post("/login", UserController.loginPost);
   webRouter.get("/profile", UserController.index);
 
   
