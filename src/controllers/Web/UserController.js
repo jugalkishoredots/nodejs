@@ -20,7 +20,7 @@ module.exports = {
     register: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
        res.render("web/register", {
-         title: ":: Login ::",
+         title: ":: Register ::",
          data: [],
          message: req.flash("error"),
          success: req.flash("success"),
@@ -29,18 +29,31 @@ module.exports = {
       //  res.render("web/register", {data: "Dynamic Data"});
     },
     registerPost: async (req, res) => {
-      await db.User.create({
-         firstName: req.body.firstName,
-         lastName: req.body.lastName,
-         email: req.body.email,
-         password : bcrypt.hashSync(req.body.password),
-      })
-        .then((faq_data) => {
-          req.flash("success", "Registration successfully!");
-          res.redirect("/login");
+      await db.User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      }).then((userDetails) => {
+          if (userDetails == null) {
+            db.User.create({
+              firstName: req.body.firstName,
+              lastName: req.body.lastName,
+              email: req.body.email,
+              password : bcrypt.hashSync(req.body.password),
+           }).then((faq_data) => {
+               req.flash("success", "Registration successfully!");
+               res.redirect("/login");
+             })
+          } else {
+            req.flash("error", "Email address already exists !!!");
+            res.redirect("/register");
+          }
         })
         .catch((error) => {
-          console.error("Failed to retrieve Faq detail : ", error);
+          console.log("mihisanisna 2");
+          console.error("Failed to retrieve admin detail : ", error);
         });
+      
+        
     },
 }
