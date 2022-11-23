@@ -13,12 +13,12 @@ module.exports = {
   login: (req, res) => {
     // res.render("users/index", {data: "Dynamic Data"});
     //  res.render("web/login", {data: "Dynamic Data"});
-    console.log(req.flash("error"));
-    const message = req.flash("error");
+    // const message = req.flash("error");
+    // console.log(message);
     res.render("admin/admin/login", {
       title: ":: Admin Login ::",
       data: [],
-      message,
+      message: req.flash("error"),
       layout: "./layouts/admin/login_layout",
     });
   },
@@ -83,6 +83,8 @@ module.exports = {
     res.render("admin/dashboard/AdminDashboard", {
       layout: "./layouts/admin/admin_layout",
       data: "Dynamic Data",
+      message: [],
+      success: req.flash("success"),
     });
   },
   myProfile: (req, res) => {
