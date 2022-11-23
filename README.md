@@ -50,4 +50,8 @@ Create a new database name 'nodejs'
 
 Step 4: 
 
-inport in to the sql file name "nodejs.sql"
+run command # npx sequelize-cli db:migrate
+
+Step 5: 
+
+run command # npx sequelize-cli db:seed:all
