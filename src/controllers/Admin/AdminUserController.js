@@ -24,5 +24,10 @@ module.exports = {
     dashboard: (req, res) => {
        // res.render("users/index", {data: "Dynamic Data"});
        res.render("admin/dashboard/AdminDashboard", { layout: './layouts/admin/admin_layout', data: "Dynamic Data"});
+    },
+    logout: (req, res) => {
+       // res.render("users/index", {data: "Dynamic Data"});
+       res.redirect("/admin");
+      //  res.render("admin/login/login", { layout: './layouts/admin/admin_layout', data: "Dynamic Data"});
     }
 }

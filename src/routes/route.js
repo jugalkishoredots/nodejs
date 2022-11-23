@@ -1,6 +1,7 @@
 const express = require("express");
 const UserController = require("../controllers/userController");
-const AdminUserController = require("../controllers/AdminUserController");
+const AdminUserController = require("../controllers/Admin/AdminUserController");
+const FaqController = require("../controllers/Admin/FaqController");
 const auth = require("../middlewares/authentication");
 const TestMiddleware = require("../middlewares/testMiddleware");
 const webRouter = express.Router();
@@ -38,6 +39,8 @@ const router = (app) => {
   adminRouter.post("/loginPost", AdminUserController.loginPost);
   //adminRouter.get("/dashboard",AdminUserController.dashboard);
   adminRouter.get("/dashboard", auth.adminAuth, AdminUserController.dashboard);
+  adminRouter.get("/faq-manager", auth.adminAuth, FaqController.index);
+  adminRouter.get("/logout", auth.adminAuth, AdminUserController.logout);
 
   //Start API Routes 
   app.use("/api", apiRouter);
