@@ -2,6 +2,7 @@ const express = require("express");
 const UserController = require("../controllers/Web/UserController");
 const AdminUserController = require("../controllers/Admin/AdminUserController");
 const FaqController = require("../controllers/Admin/FaqController");
+const UserManager = require("../controllers/Admin/UserController");
 const auth = require("../middlewares/authentication");
 const TestMiddleware = require("../middlewares/testMiddleware");
 const webRouter = express.Router();
@@ -37,6 +38,7 @@ const router = (app) => {
   adminRouter.get("/", auth.ifAdminLoggedin,AdminUserController.login);
   adminRouter.post("/loginPost", AdminUserController.loginPost);
   adminRouter.get("/dashboard", auth.adminAuth, AdminUserController.dashboard);
+  adminRouter.get("/user-manager", auth.adminAuth, UserManager.index);
   adminRouter.get("/faq-manager", auth.adminAuth, FaqController.index);
   adminRouter.get("/faq-manager/create", auth.adminAuth, FaqController.add);
   adminRouter.post("/faq-manager/create", auth.adminAuth, FaqController.save);
