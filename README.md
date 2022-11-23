@@ -26,6 +26,14 @@ npm run start:dev
 Open [http://localhost:3000](http://localhost:3000) and take a look around.
 
 
+Open [http://localhost:3000/admin](http://localhost:3000/admin) for admin panel.
+
+Use this details: 
+
+Email : jugal.kishore@dotsquares.com
+Password : Dots@123
+
+
 ## Steps for Database (recommended)
 ```
 Step 1: 
