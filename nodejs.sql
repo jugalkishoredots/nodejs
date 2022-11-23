@@ -42,7 +42,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `firstName`, `lastName`, `email`, `password`, `createdAt`, `updatedAt`) VALUES
-(1, 'Jugal', 'Kishore', 'jugal.kishore@dotsquares.com', '$2a$12$r4fu9EL/qJtyt8HPlfqgb.YuRSLTzgTtVGe.xvbdYIMNmNC6Erh/a', '2022-11-23 05:29:30', '2022-11-23 09:46:26');
+(1, 'Jugal', 'Kishore', 'admin@example.com', '$2a$12$r4fu9EL/qJtyt8HPlfqgb.YuRSLTzgTtVGe.xvbdYIMNmNC6Erh/a', '2022-11-23 05:29:30', '2022-11-23 09:46:26');
 
 -- --------------------------------------------------------
 
