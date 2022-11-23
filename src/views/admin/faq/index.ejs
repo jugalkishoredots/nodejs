@@ -4,6 +4,9 @@
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">FAQ Manager</h3>
+            <div class="card-tools">
+              <a class="btn bg-gradient-primary btn-sm" href="/admin/faq-manager/create">Add New</a>
+            </div>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -15,7 +18,7 @@
                   <th>Answer</th>
                   <th style="width: 500px;">Created Date</th>
                   <th style="width: 40px">Status</th>
-                  <th style="width: 150px">Action</th>
+                  <th style="width: 160px">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -25,10 +28,18 @@
                     <td><%= faq.question %> </td>
                     <td><%= faq.answer %> </td>
                     <td><%= faq.createdAt %> </td>
-                    <td><%= faq.status %> </td>                    
                     <td>
-                      <a class="btn bg-gradient-primary btn-sm">Edit</a>
-                      <a class="btn bg-gradient-danger btn-sm">Delete</a>
+                      <% if (faq.status == 0) { %>
+                        <span class="badge bg-gradient-danger btn-sm">InActive</span>
+                        <% }else{ %>
+                          <span class="badge bg-gradient-success btn-sm">Active</span>                        
+                        <% } %>                      
+                    </td>                    
+                    <td>
+                      <form method="POST" action="/admin/faq-manager/<%= faq.id %>/delete">
+                        <a class="btn bg-gradient-primary btn-sm" href="/admin/faq-manager/<%= faq.id %>/edit">Edit</a>
+                        <button type="submit" class="btn bg-gradient-danger btn-sm show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
+                    </form>
                     </td>                    
                   </tr>
                 <%  }) %>                

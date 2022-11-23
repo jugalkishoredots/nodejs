@@ -38,6 +38,11 @@ const router = (app) => {
   adminRouter.post("/loginPost", AdminUserController.loginPost);
   adminRouter.get("/dashboard", auth.adminAuth, AdminUserController.dashboard);
   adminRouter.get("/faq-manager", auth.adminAuth, FaqController.index);
+  adminRouter.get("/faq-manager/create", auth.adminAuth, FaqController.add);
+  adminRouter.post("/faq-manager/create", auth.adminAuth, FaqController.save);
+  adminRouter.get("/faq-manager/:id/edit", auth.adminAuth, FaqController.edit);
+  adminRouter.post("/faq-manager/:id/edit", auth.adminAuth, FaqController.update);
+  adminRouter.post("/faq-manager/:id/delete", auth.adminAuth, FaqController.delete);
   adminRouter.get("/my-profile", auth.adminAuth, AdminUserController.myProfile);
   adminRouter.get("/settings", auth.adminAuth, AdminUserController.settings);
   adminRouter.get("/logout", auth.adminAuth, AdminUserController.logout);
