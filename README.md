@@ -1,4 +1,4 @@
-## The node.js example app
+## The node.js Basic Web App
 
 
 ## Common setup
