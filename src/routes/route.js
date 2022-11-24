@@ -21,6 +21,8 @@ const router = (app) => {
   webRouter.post("/register", UserController.registerPost);
   webRouter.get("/login", UserController.login);
   webRouter.post("/login", UserController.loginPost);
+  webRouter.get("/forgot-password", UserController.forgotPassword);
+  webRouter.post("/forgot-password", UserController.forgotPasswordMail);
   webRouter.get("/profile", UserController.index);
 
   
